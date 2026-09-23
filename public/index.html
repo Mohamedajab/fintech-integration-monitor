@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Operational dashboard for FinTech API integrations">
+    <title>Pulseboard — Integration Monitor</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <header class="masthead">
+      <a class="brand" href="/" aria-label="Pulseboard home">
+        <span class="brand-mark" aria-hidden="true">P</span>
+        <span>Pulseboard</span>
+      </a>
+      <div class="environment"><span></span> Sandbox environment</div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Operations / Live integrations</p>
+          <h1 id="page-title">Service health,<br><em>without the noise.</em></h1>
+          <p class="lede">A focused view of the APIs that keep money moving. Checks run on demand and classify latency against service-specific thresholds.</p>
+        </div>
+        <button id="refresh" type="button"><span aria-hidden="true">↻</span> Run checks</button>
+      </section>
+
+      <section class="summary" aria-label="Integration summary">
+        <div><strong id="total-count">—</strong><span>Integrations</span></div>
+        <div><strong id="healthy-count">—</strong><span>Operational</span></div>
+        <div><strong id="attention-count">—</strong><span>Needs attention</span></div>
+        <p id="last-checked" aria-live="polite">Waiting for first check</p>
+      </section>
+
+      <section aria-labelledby="services-title">
+        <div class="section-heading">
+          <h2 id="services-title">Current status</h2>
+          <span>Latency / last 12 checks</span>
+        </div>
+        <div id="services" class="service-grid" aria-live="polite">
+          <article class="service-card skeleton"><div></div><div></div><div></div></article>
+          <article class="service-card skeleton"><div></div><div></div><div></div></article>
+        </div>
+      </section>
+    </main>
+
+    <footer><span>Pulseboard v1.0</span><span>Built for reliable integrations</span></footer>
+  </body>
+</html>
+
