@@ -37,6 +37,9 @@ The regression test launches the HTTP application on an ephemeral port, calls it
 
 ## Design choices
 
+For all environment variables, refresh behaviour, API status interpretation and
+troubleshooting, see the [local operations guide](docs/OPERATIONS.md).
+
 - Dependencies are deliberately avoided so the project can be reviewed and run quickly.
 - Integrations are an allowlist in `src/integrations.js`; users cannot submit arbitrary URLs.
 - The last 12 results per service are held in memory. That is appropriate for a demonstration, not an audit record.
